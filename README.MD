@@ -26,4 +26,6 @@ module.exports = {
       [chunkhash]打包时，每个文件生成一个hash值，修改，才会发生变化，用来记录每个文件版本
 4、"clean": "rimraf dist","dev": "npm run clean&&webpack"
 注：rimraf是删除文件夹，需要npm安装
+5、plugins: [new htmlWebpackPlugin()]
+注：引入html-webpack-plguin插件，用来打包html并自动引用js路径
 ```
