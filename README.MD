@@ -28,4 +28,23 @@ module.exports = {
 注：rimraf是删除文件夹，需要npm安装
 5、plugins: [new htmlWebpackPlugin()]
 注：引入html-webpack-plguin插件，用来打包html并自动引用js路径
+6、plugins: [
+    new htmlWebpackPlugin({
+        filename:'main.html',
+        template:'index.html',
+        inject:'head',
+        title:'webpack is good'，
+  minify: {
+    removeComments: true,
+    collapseWhitespace: true
+  }
+    })
+]
+注：filename 输出的html文件名
+      template 采用模板的html文件名
+      inject 指定js引用在html的位置，如果手动引用的话，需要把这个对象的值改为false
+      title 标题文件，并能被ejs语法引用<title><%= htmlWebpackPlugin.options.title%></title>
+      而且支持自定义的变量 https://github.com/smalleast/html-minifier
+      minify对文件进行压缩，removeComments删除注释collapseWhitespace删除空格
+7.<script src="<%=htmlWebpackPlugin.files.chunks.main.entry%>"></script>手动指定引用路径
 ```

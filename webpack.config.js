@@ -9,10 +9,20 @@ module.exports = {
         app: './src/script/app.js'
     },
     output: {
-        path: path.join(__dirname, './dist/js'),
-        filename: '[name]-[chunkhash].js'
+        path: path.join(__dirname, './dist'),
+        filename: 'js/[name]-[chunkhash].js',
+        publicPath: "http://cdn.com"
     },
     plugins: [
-        new htmlWebpackPlugin()
+        new htmlWebpackPlugin({
+            filename: 'main.html',
+            template: 'index.html',
+            inject: false,
+            title: 'webpack is good',
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true
+            }
+        })
     ]
 }
