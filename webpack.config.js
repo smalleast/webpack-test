@@ -10,19 +10,23 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, './dist'),
-        filename: 'js/[name]-[chunkhash].js',
+        filename: 'js/[name]-[chunkhash:5].js',
         publicPath: "http://cdn.com"
     },
     plugins: [
         new htmlWebpackPlugin({
             filename: 'main.html',
             template: 'index.html',
-            inject: false,
-            title: 'webpack is good',
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true
-            }
+            inject: 'head',
+            title: 'this is main.html',
+            chunks:['main']
+        }),
+        new htmlWebpackPlugin({
+            filename: 'app.html',
+            template: 'index.html',
+            inject: 'head',
+            title: 'this is app.html',
+            chunks:['app']
         })
     ]
 }
