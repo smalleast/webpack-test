@@ -60,20 +60,19 @@
 /******/ 	__webpack_require__.p = "http://cdn.com";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */
+/******/ ({
+
+/***/ 3:
 /***/ (function(module, exports) {
 
 /**
- * Created by dcpai on 2017/6/22.
+ * Created by tony on 2017/7/13.
  */
-function app() {
-    console.log('app');
-}
+
 
 /***/ })
-/******/ ]);
+
+/******/ });

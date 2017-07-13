@@ -34,6 +34,8 @@ module.exports = {
         template:'index.html',
         inject:'head',
         title:'webpack is good'，
+        chunks: ['main', 'a']，
+        excludeChunks: ['c']
   minify: {
     removeComments: true,
     collapseWhitespace: true
@@ -46,5 +48,7 @@ module.exports = {
       title 标题文件，并能被ejs语法引用<title><%= htmlWebpackPlugin.options.title%></title>
       而且支持自定义的变量 https://github.com/smalleast/html-minifier
       minify对文件进行压缩，removeComments删除注释collapseWhitespace删除空格
+      chunks 指定当前页面引用的js静态文件
+      excludeChunks排除当前页面引入的js静态文件
 7.<script src="<%=htmlWebpackPlugin.files.chunks.main.entry%>"></script>手动指定引用路径
 ```

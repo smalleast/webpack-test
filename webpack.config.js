@@ -6,7 +6,9 @@ let htmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         main: './src/script/main.js',
-        app: './src/script/app.js'
+        a: './src/script/a.js',
+        b: './src/script/b.js',
+        c: './src/script/c.js'
     },
     output: {
         path: path.join(__dirname, './dist'),
@@ -15,18 +17,25 @@ module.exports = {
     },
     plugins: [
         new htmlWebpackPlugin({
-            filename: 'main.html',
+            filename: 'a.html',
             template: 'index.html',
             inject: 'head',
-            title: 'this is main.html',
-            chunks:['main']
+            title: 'this is a.html',
+            chunks: ['main', 'a']
         }),
         new htmlWebpackPlugin({
-            filename: 'app.html',
+            filename: 'b.html',
             template: 'index.html',
             inject: 'head',
-            title: 'this is app.html',
-            chunks:['app']
+            title: 'this is b.html',
+            chunks: ['b']
+        }),
+        new htmlWebpackPlugin({
+            filename: 'c.html',
+            template: 'index.html',
+            inject: 'head',
+            title: 'this is c.html',
+            chunks: ['c']
         })
     ]
 }
